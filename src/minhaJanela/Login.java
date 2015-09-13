@@ -1,11 +1,17 @@
 
 package minhaJanela;
 
-import javax.swing.ImageIcon;
+public class Login extends javax.swing.JDialog {
+    
+    private Principal janelaPrincipal;
 
-public class Login extends javax.swing.JFrame {
-
-    public Login() {
+    // O JDialog espera receber por parametro a instancia da janela principal e se sera modal ou nao 
+    // Ser modal significa que a janela bloqueara a janela anterior.
+    public Login( Principal principal, boolean modal ) {
+        super( principal, true );
+        
+        this.janelaPrincipal = principal;
+        
         initComponents();     
     }
 
@@ -93,7 +99,7 @@ public class Login extends javax.swing.JFrame {
         );
 
         getContentPane().add(jPanel3);
-        jPanel3.setBounds(10, 20, 490, 0);
+        jPanel3.setBounds(10, 20, 490, 109);
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED), "Cadastro"));
@@ -222,42 +228,7 @@ public class Login extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    public static void main(String args[]) {
-       
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Login login;
-                login = new Login();
-                login.setVisible(true);  
-                ImageIcon icone = new ImageIcon("img/cadeado.jpg"); 
-                login.setIconImage(icone.getImage());
-                
-            }
-        });
-    }
+ 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
