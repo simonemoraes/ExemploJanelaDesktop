@@ -26,7 +26,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(0, 200, 225));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -91,7 +91,7 @@ public class Principal extends javax.swing.JFrame {
                 janela.setResizable(false);
                 
                 Login login;
-                login = new Login();
+                login = new Login( new Principal(), true );
                 login.setVisible(true);
              
             }
